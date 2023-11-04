@@ -1,6 +1,6 @@
 import unittest
 
-from src.mug import Mug
+from mug import Mug
 
 
 class MyTestCase(unittest.TestCase):
