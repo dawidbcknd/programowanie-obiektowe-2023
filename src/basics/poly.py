@@ -11,7 +11,11 @@ class Room:
         self.occupants.append(actor)
 
     def leave(self, actor: str):
-        logger.info('Leaving room')
+        if actor in self.occupants:
+            logger.info(f'Leaving room: {actor=}')
+            self.occupants.remove(actor)
+        else:
+            raise RuntimeError(f'Actor {actor} is not in the room')
 
     def get_occupants(self) -> list[str]:
         return []
